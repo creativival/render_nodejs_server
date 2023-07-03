@@ -21,7 +21,7 @@ wss.on('connection', function connection(ws) {
       if (roomName in rooms) {
         rooms[roomName].forEach(client => {
           if (client !== ws && client.readyState === WebSocket.OPEN) {
-            client.send(`Message from server: ${message}`);
+            client.send(message);
           }
         });
       }

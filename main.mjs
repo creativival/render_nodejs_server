@@ -1,4 +1,4 @@
-const BuildBox = require('./buildBox.js');
+import BuildBox from './buildBox.mjs';
 
 const roomName = '1000';
 const buildBox = new BuildBox(roomName);

@@ -10,7 +10,7 @@ wss.on('connection', function connection(ws) {
   ws.on('message', function incoming(message) {
     // 初回メッセージの検証
     if (!roomName) {
-      if (typeof message === 'string' || message.length  < 10) { // 例: 部屋名の長さ制限
+      if (typeof message !== 'string' || message.length  > 10) { // 例: 部屋名の長さ制限
         ws.send('Invalid room name');
         ws.close();
         return;
